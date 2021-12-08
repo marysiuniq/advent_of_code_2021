@@ -8,4 +8,5 @@ This repository contains my solutions to [Advent of Code 2021](https://adventofc
 04 [--- Day 4: Giant Squid ---](https://adventofcode.com/2021/day/4)\
 05 [--- Day 5: Hydrothermal Venture ---](https://adventofcode.com/2021/day/5)\
 06 [--- Day 6: Lanternfish ---](https://adventofcode.com/2021/day/6)\
-07 [--- Day 7: The Treachery of Whales ---](https://adventofcode.com/2021/day/7)
+07 [--- Day 7: The Treachery of Whales ---](https://adventofcode.com/2021/day/7)\
+08 [--- Day 8: Seven Segment Search ---](https://adventofcode.com/2021/day/8)
