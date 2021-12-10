@@ -42,12 +42,12 @@ def solve_puzzle(in_list):
             row = row.replace('{}', '')
             row = row.replace('<>', '')
         if ')' in row or ']' in row or '}' in row or '>' in row:
-            suspicuous_characters = [row.find(')'),
+            suspicious_characters = [row.find(')'),
                                      row.find(']'),
                                      row.find('}'),
                                      row.find('>')]
-            suspicuous_characters = [_ for _ in suspicuous_characters if _ != -1]
-            illegal_character = row[min(suspicuous_characters)]
+            suspicious_characters = [_ for _ in suspicious_characters if _ != -1]
+            illegal_character = row[min(suspicious_characters)]
             score += score_dict[illegal_character]
         else:
             for char in row[::-1]:
