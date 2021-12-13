@@ -19,23 +19,19 @@ def make_folds(in_list):
     This function makes folds for you.
     '''
     limit_pos = in_list.index('')
-    positions = [[int(_[0:_.find(',')]), int(_[_.find(',')+1:])] for _ in in_list[0:limit_pos]]
+    positions = [(int(_[0:_.find(',')]), int(_[_.find(',')+1:])) for _ in in_list[0:limit_pos]]
     fold_list = [[_[11:12], int(_[13:])] for _ in in_list[limit_pos+1:]]
     dots_in_paper = []
     for fold in fold_list:
         if fold[0] == 'y':
             for dot_ind, dot in enumerate(positions):
                 if dot[1] > fold[1]:
-                    positions[dot_ind][1] = fold[1] - (dot[1]-fold[1])
+                    positions[dot_ind] = (positions[dot_ind][0], 2*fold[1] - dot[1])
         elif fold[0] == 'x':
             for dot_ind, dot in enumerate(positions):
                 if dot[0] > fold[1]:
-                    positions[dot_ind][0] = fold[1] - (dot[0]-fold[1])
-        unique = []
-        for position in positions:
-            if position not in unique:
-                unique += [position]
-        dots_in_paper += [len(unique)]
+                    positions[dot_ind] = (2*fold[1] - dot[0], positions[dot_ind][1])
+        dots_in_paper += [len(set(positions))]
     return dots_in_paper, positions
 
 
